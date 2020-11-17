@@ -23,3 +23,6 @@ We propose the OIX task and the OIA in our paper:
 [Dataset](https://github.com/sunbelbd/Open-Information-eXpression/blob/main/oix/data/en/oia/oia_standard.json)
 
 
+## Warning
+
+OIA's annotation standards, data, and code are evolving rapidly. These changes are not necessarily reflected in the document in real time.

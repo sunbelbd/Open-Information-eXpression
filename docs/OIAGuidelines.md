@@ -56,8 +56,8 @@ Examples:
 
 * ... they don't want to work hard, **just because** you bruised your own ego.
 * I've been fuming over this fact for a few weeks now, **ever since** some organizations and governments suggested we need to accept the fact that Hezbollah will get involved in running Lebanon.
-* There are numerous other examples of such Orwellian nomenclature, used every day **not only** by terror chiefs **but also** by Western media.  (not only {1" but also {2")
-* His military intelligence has captured major figures like Abu Zubayda **and** Khalid Shaykh Muhammad **, as well as** nearly 500 other al-Qaeda operatives, over 400 of whom the Pakistanis have turned over to the US.  ({1" and {2", as well as {3")
+* There are numerous other examples of such Orwellian nomenclature, used every day **not only** by terror chiefs **but also** by Western media.  (not only {1} but also {2})
+* His military intelligence has captured major figures like Abu Zubayda **and** Khalid Shaykh Muhammad **, as well as** nearly 500 other al-Qaeda operatives, over 400 of whom the Pakistanis have turned over to the US.  ({1} and {2}, as well as {3})
 
 ### Simple Question Phrases
 
@@ -67,7 +67,14 @@ Examples:
 
 ## Identify relationships between nodes
 
+### Events
+
+Eventive facts are facts about entities’actions or status, which is generally expressed by the *subj*, *obj* and *\*comp* dependencies. 
+In OIA, the *pred.arg.1* always points to the subject of the event, and *pred.arg.2* to *pred.arg.N* 
+refer to the (multiple) objects. Events themselves can be arguments of predicates as well.
+
 ### Modifications
+
 #### Adjective/Adverbial Modification
 Simple modifiers for nouns, verbs, and prepositions are directly merged into the corresponding phrase. 
 For those who are either complex or not adjacent to the headword,  
@@ -127,9 +134,24 @@ We express this knowledge by adding an edge "ref" from the entity to the referen
 Again, if this edge violates the requirement of single-root DAG, the edge will be reversed as "as:ref".   
 
 
-
-
 ### Other UD annotated Relations
+
 There are several UD annotations that describe the relationship between two fact A and B, 
 for example, "appos", "vocative", and "parataxis", etc. 
 For each such annotation, we add a predicate named with that annotation and takes A and B as arguments. 
+
+## Reorganize the graph into DAG
+
+### Find the root 
+
+Generally, we find the central predicate in the sentence as the root of the OIA graph. 
+
+1. For a single sentence, the root node is the verb predicate of the sentence;
+2. For a compound sentence, the root node is the verb predicate of the main sentence; 
+3. For a coordinate structure of sentences, the root node is the coordinate predicate（"and", or Parataxis, or List)
+4. For a phrase, the root node is the head of the phrase.
+
+### Make the graph a DAG
+
+Given the root, we find all the edges voilating the requirement of DAG 
+and add "as:" prefix to their labels. 
