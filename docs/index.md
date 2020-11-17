@@ -12,9 +12,14 @@ We propose the OIX task and the OIA in our paper:
 
 ## Annotation Guidelines for OIA
 
+[Annotation Guidelines](https://sunbelbd.github.io/Open-Information-eXpression/OIAGuidelines)
 
 ## Codes  
 
+[Codes](https://github.com/sunbelbd/Open-Information-eXpression)
+
 ## Dataset 
+
+[Dataset](https://github.com/sunbelbd/Open-Information-eXpression/blob/main/oix/data/en/oia/oia_standard.json)
 
 
