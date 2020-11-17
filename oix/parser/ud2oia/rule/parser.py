@@ -64,7 +64,7 @@ def sentence2oia(lang, uri, sentence, debug=False):
     if stanza_pipeline is None:
         import stanza
         stanza_pipeline = stanza.Pipeline(lang, processors='tokenize,mwt,pos,lemma,depparse',
-                                                     tokenize_pretokenized=True)
+                                                     tokenize_pretokenized=False)
 
     dep_graph = DependencyGraph.from_sentence(sentence, stanza_pipeline)
 
